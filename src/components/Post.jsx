@@ -17,7 +17,7 @@ export default function Post({ post }) {
           text="ver mas"
           fun={() => console.log("abriendo post", post.id)}
         />
-			</Link>
+      </Link>
 
     </div>
   );

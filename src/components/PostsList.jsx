@@ -13,8 +13,10 @@ export default function PostsList() {
   return (
     <div>
       <h1>Bringing posts from jsonPlaceholder API</h1>
-      {posts.slice(pages[1], pages[1] + pages[0]).map((post) => (
-        <Post key={post.id} post={post} />
+      {posts
+        .slice(pages[1], pages[1] + pages[0])
+        .map((post) => (
+          <Post key={post.id} post={post} />
       ))}
 
       <Button

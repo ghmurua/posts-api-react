@@ -7,6 +7,8 @@ export function ContextProvider(props) {
   const [pages, setPages] = useState([15, 0]);
   const [users, setUsers] = useState([]);
   const [allComments, setComments] = useState([]);
+  const [albums, setAlbums] = useState([]);
+  const [photos, setPhotos] = useState([]);
 
   function fetchPosts() {
     fetch("https://jsonplaceholder.typicode.com/posts")
@@ -26,10 +28,24 @@ export function ContextProvider(props) {
     .then((response) => setUsers(response));
   }
 
+  function fetchAlbums() {
+    fetch("https://jsonplaceholder.typicode.com/albums")
+    .then((res) => res.json())
+    .then((response) => setAlbums(response));
+  }
+
+  function fetchPhotos() {
+    fetch("https://jsonplaceholder.typicode.com/photos")
+    .then((res) => res.json())
+    .then((response) => setPhotos(response));
+  }
+
   useEffect(() => {
     fetchPosts();
     fetchComments();
     fetchUsers();
+    fetchAlbums();
+    fetchPhotos();
   }, []);
 
   return (
@@ -39,7 +55,9 @@ export function ContextProvider(props) {
         pages,
         setPages,
         allComments,
-        users
+        users,
+        albums,
+        photos
       }}
     >
       {props.children}
