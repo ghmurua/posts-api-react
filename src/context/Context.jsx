@@ -57,7 +57,8 @@ export function ContextProvider(props) {
         allComments,
         users,
         albums,
-        photos
+        photos,
+        setPosts
       }}
     >
       {props.children}

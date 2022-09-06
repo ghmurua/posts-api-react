@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Context } from "../Context";
+import { Context } from "../context/Context";
 import Comment from "./Comment";
 
 export default function CommentsList({ id }) {

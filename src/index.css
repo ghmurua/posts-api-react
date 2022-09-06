@@ -18,18 +18,19 @@
 a {
   font-weight: 500;
   color: #646cff;
-  text-decoration: inherit;
+  text-decoration: none;
 }
 a:hover {
   color: #535bf2;
+  text-decoration: underline;
 }
 
 body {
-  margin: 0;
+  margin: 0 auto;
   display: flex;
-  /* place-items: center; */
+  flex-direction: column;
   min-width: 320px;
-  min-height: 100vh;
+  max-width: 1000px;
 }
 
 h1 {
@@ -67,4 +68,101 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+dialog {
+  padding: 5px;
+  border: none;
+  background: #fff;
+}
+
+dialog::backdrop {
+  backdrop-filter: blur(2px);
+}
+
+.comment {
+  width: 600px;
+  margin: 15px;
+  border-radius: 5px;
+  background: #656565;
+  padding: 12px 25px;
+}
+
+.commentId {
+  color: darkorange;
+}
+
+.img {
+  width: 150px;
+}
+
+.post-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.post {
+  width: 250px;
+  border-bottom: 3px solid slateblue; 
+  background-color: #111;
+  padding: 10px 15px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.post p {
+  font-size: 10px;
+}
+
+.post div {
+  display: flex;
+}
+
+.pages {
+  margin: 10px auto;
+}
+
+.footer {
+  background-color: #000;
+  color: #bababa;
+  height: 100px;
+  margin-top: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-evenly;
+}
+
+.footer div {
+  flex-direction: column;
+}
+.footer a {
+  text-decoration: none;
+  color: #cecece;
+  display: block;
+}
+.footer a:hover {
+  color: orangered;
+}
+
+.postDetail header {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+}
+.postDetail h3 {
+  margin-top: 50px;
+}
+
+.photoSet {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 750px;
+  /* margin: 0 auto; */
+}
+
+.notFound {
+  display: grid;
+  height: 100vh;
+  place-items: center;
 }

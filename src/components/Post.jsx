@@ -3,22 +3,20 @@ import { Link } from "react-router-dom";
 
 export default function Post({ post }) {
   return (
-    <div style={{ 
-      borderBottom: "3px solid slateblue", 
-      display: "flex" }}
-    >
+    <div className="post">
       <h3>{post.title}</h3>
-      <small>
-        userId{post.userId} id{post.id}
-      </small>
-      <p style={{ fontSize: "10px" }}>{post.body}</p>
+      <div>
+        <small>userId{post.userId} id{post.id}</small>
+      </div>
+      <p>{post.body}</p>
       <Link to={`/posts/${post.id}`}>
         <Button
           text="ver mas"
-          fun={() => console.log("abriendo post", post.id)}
+          fun={() => {
+            window.scrollTo(0, 0);
+          }}
         />
       </Link>
-
     </div>
   );
 }
